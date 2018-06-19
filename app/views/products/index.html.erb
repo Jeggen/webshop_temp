@@ -1,0 +1,46 @@
+<h2>
+  Product toevoegen
+</h2>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>
+        Categorie
+      </th>
+      <th>
+        Product
+      </th>
+      <th>
+        Beschrijving
+      </th>
+      <th>
+        Prijs
+      </th>
+      <th>
+        Kleur
+      </th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @products.each do |product| %>
+      <tr>
+        <td>
+          <%= Category.find_by(id: product.category_id).title %>
+        </td>
+        <td>
+          <%= product.title %>
+        </td>
+        <td>
+          <%= product.description %>
+        </td>
+        <td>
+          <%= product.unit_price %>
+        </td>
+        <td>
+          <%= product.color %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

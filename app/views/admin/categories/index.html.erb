@@ -1,0 +1,11 @@
+<h2>Nieuwe categorie toevoegen</h2>
+
+<%= form_for Category.new, url: {action: "create"}, html: {class: "nifty_form"} do |f| %>
+  <div class="form-group">
+    <%= f.text_field :title, class: 'form-control', placeholder: 'Naam' %>
+  </div>
+  <div class="form-group">
+    <%= f.text_area :description, class: 'form-control', placeholder: 'Beschrijving' %>
+  </div>
+  <%= f.submit "Opslaan", class: 'btn btn-success' %>
+<% end %>
